@@ -1,6 +1,6 @@
 
 // FunktionsRechner.cpp : Defines the class behaviors for the application.
-//
+//Hallo
 
 #include "pch.h"
 #include "framework.h"
