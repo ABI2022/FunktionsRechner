@@ -65,6 +65,8 @@ BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDOK, &CFunktionsRechnerDlg::OnBnClickedOk)
+	ON_EN_CHANGE(IDC_EDIT1, &CFunktionsRechnerDlg::OnEnChangeEdit1)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +155,21 @@ HCURSOR CFunktionsRechnerDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CFunktionsRechnerDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialogEx::OnOK();
+}
+
+
+void CFunktionsRechnerDlg::OnEnChangeEdit1()
+{
+	// TODO:  If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CDialogEx::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+
+	// TODO:  Add your control notification handler code here
+}
