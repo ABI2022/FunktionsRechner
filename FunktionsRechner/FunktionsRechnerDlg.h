@@ -36,4 +36,9 @@ public:
 	afx_msg void OnEnChangeEdit1();
 	afx_msg void OnCbnSelchangeCombo1();
 	CString m_csGrad;
+	CString m_csTeil1;
+	CString m_csTeil2;
+	CString m_csTeil3;
+	CString m_csTeil4;
+	CString m_csErg;
 };

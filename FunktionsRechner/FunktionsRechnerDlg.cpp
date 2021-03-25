@@ -53,6 +53,11 @@ END_MESSAGE_MAP()
 CFunktionsRechnerDlg::CFunktionsRechnerDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_FUNKTIONSRECHNER_DIALOG, pParent)
 	, m_csGrad(_T(""))
+	, m_csTeil1(_T(""))
+	, m_csTeil2(_T(""))
+	, m_csTeil3(_T(""))
+	, m_csTeil4(_T(""))
+	, m_csErg(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -61,6 +66,11 @@ void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_CBString(pDX, IDC_COMBO1, m_csGrad);
+	DDX_Text(pDX, IDC_TEIL1, m_csTeil1);
+	DDX_Text(pDX, IDC_TEIL2, m_csTeil2);
+	DDX_Text(pDX, IDC_TEIL3, m_csTeil3);
+	DDX_Text(pDX, IDC_TEIL4, m_csTeil4);
+	DDX_Text(pDX, IDC_ERG, m_csErg);
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -68,7 +78,7 @@ BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CFunktionsRechnerDlg::OnBnClickedOk)
-	ON_EN_CHANGE(IDC_EDIT1, &CFunktionsRechnerDlg::OnEnChangeEdit1)
+	ON_EN_CHANGE(IDC_ERG, &CFunktionsRechnerDlg::OnEnChangeEdit1)
 	ON_CBN_SELCHANGE(IDC_COMBO1, &CFunktionsRechnerDlg::OnCbnSelchangeCombo1)
 END_MESSAGE_MAP()
 
