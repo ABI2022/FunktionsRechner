@@ -172,8 +172,8 @@ HCURSOR CFunktionsRechnerDlg::OnQueryDragIcon()
 
 void CFunktionsRechnerDlg::OnBnClickedOk()
 {
-	// TODO: Add your control notification handler code here
-	CDialogEx::OnOK(); //Test
+
+	
 }
 
 
@@ -190,5 +190,5 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 
 void CFunktionsRechnerDlg::OnCbnSelchangeCombo1()
 {
-	// TODO: Add your control notification handler code here
+	
 }
