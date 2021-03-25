@@ -52,6 +52,7 @@ END_MESSAGE_MAP()
 
 CFunktionsRechnerDlg::CFunktionsRechnerDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_FUNKTIONSRECHNER_DIALOG, pParent)
+	, m_csGrad(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -59,6 +60,7 @@ CFunktionsRechnerDlg::CFunktionsRechnerDlg(CWnd* pParent /*=nullptr*/)
 void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_CBString(pDX, IDC_COMBO1, m_csGrad);
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -67,6 +69,7 @@ BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CFunktionsRechnerDlg::OnBnClickedOk)
 	ON_EN_CHANGE(IDC_EDIT1, &CFunktionsRechnerDlg::OnEnChangeEdit1)
+	ON_CBN_SELCHANGE(IDC_COMBO1, &CFunktionsRechnerDlg::OnCbnSelchangeCombo1)
 END_MESSAGE_MAP()
 
 
@@ -172,4 +175,10 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 	// with the ENM_CHANGE flag ORed into the mask.
 
 	// TODO:  Add your control notification handler code here
+}
+
+
+void CFunktionsRechnerDlg::OnCbnSelchangeCombo1()
+{
+	// TODO: Add your control notification handler code here
 }
