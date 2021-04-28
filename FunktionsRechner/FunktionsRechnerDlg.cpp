@@ -174,8 +174,8 @@ HCURSOR CFunktionsRechnerDlg::OnQueryDragIcon()
 
 void CFunktionsRechnerDlg::OnBnClickedOk()
 {
-	// TODO: Add your control notification handler code here
-	CDialogEx::OnOK(); //Test
+
+	
 }
 
 
@@ -212,4 +212,5 @@ void CFunktionsRechnerDlg::OnBnClickedCheck3()
 void CFunktionsRechnerDlg::OnBnClickedCheck4()
 {
 	GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
+	
 }
