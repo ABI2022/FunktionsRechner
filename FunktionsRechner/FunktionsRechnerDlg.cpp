@@ -65,7 +65,6 @@ CFunktionsRechnerDlg::CFunktionsRechnerDlg(CWnd* pParent /*=nullptr*/)
 void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_CBString(pDX, IDC_COMBO1, m_csGrad);
 	DDX_Text(pDX, IDC_TEIL1, m_csTeil1);
 	DDX_Text(pDX, IDC_TEIL2, m_csTeil2);
 	DDX_Text(pDX, IDC_TEIL3, m_csTeil3);
@@ -79,7 +78,10 @@ BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CFunktionsRechnerDlg::OnBnClickedOk)
 	ON_EN_CHANGE(IDC_ERG, &CFunktionsRechnerDlg::OnEnChangeEdit1)
-	ON_CBN_SELCHANGE(IDC_COMBO1, &CFunktionsRechnerDlg::OnCbnSelchangeCombo1)
+	ON_BN_CLICKED(IDC_CHECK1, &CFunktionsRechnerDlg::OnBnClickedCheck1)
+	ON_BN_CLICKED(IDC_CHECK2, &CFunktionsRechnerDlg::OnBnClickedCheck2)
+	ON_BN_CLICKED(IDC_CHECK3, &CFunktionsRechnerDlg::OnBnClickedCheck3)
+	ON_BN_CLICKED(IDC_CHECK4, &CFunktionsRechnerDlg::OnBnClickedCheck4)
 END_MESSAGE_MAP()
 
 
@@ -188,7 +190,26 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 }
 
 
-void CFunktionsRechnerDlg::OnCbnSelchangeCombo1()
+
+void CFunktionsRechnerDlg::OnBnClickedCheck1()
 {
-	// TODO: Add your control notification handler code here
+	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+}
+
+
+void CFunktionsRechnerDlg::OnBnClickedCheck2()
+{
+	GetDlgItem(IDC_TEIL2)->EnableWindow(TRUE);
+}
+
+
+void CFunktionsRechnerDlg::OnBnClickedCheck3()
+{
+	GetDlgItem(IDC_TEIL3)->EnableWindow(TRUE);
+}
+
+
+void CFunktionsRechnerDlg::OnBnClickedCheck4()
+{
+	GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
 }

@@ -41,4 +41,8 @@ public:
 	CString m_csTeil3;
 	CString m_csTeil4;
 	CString m_csErg;
+	afx_msg void OnBnClickedCheck1();
+	afx_msg void OnBnClickedCheck2();
+	afx_msg void OnBnClickedCheck3();
+	afx_msg void OnBnClickedCheck4();
 };
