@@ -174,8 +174,8 @@ HCURSOR CFunktionsRechnerDlg::OnQueryDragIcon()
 
 void CFunktionsRechnerDlg::OnBnClickedOk()
 {
-
-	
+	// TODO: Add your control notification handler code here
+	CDialogEx::OnOK(); //Test
 }
 
 
@@ -193,7 +193,26 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 
 void CFunktionsRechnerDlg::OnBnClickedCheck1()
 {
+
 	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+
+	//bool IsChecked;
+	////CButton* m_ctlCheck1 = (CButton*)GetDlgItem(IDC_CHECK1);
+	////IsChecked = (m_ctlCheck1->GetCheck() == 1) ? true : false;
+	//IsChecked = false;
+	//UpdateData(TRUE);
+	//if (IsChecked = false)
+	//{
+	//	GetDlgItem(IDC_TEIL1)->EnableWindow(FALSE);
+	//	IsChecked = true;
+	//}
+	//else
+	//{
+	//	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+	//	IsChecked = false;
+	//}
+	//UpdateData(FALSE);
+
 }
 
 
@@ -212,5 +231,4 @@ void CFunktionsRechnerDlg::OnBnClickedCheck3()
 void CFunktionsRechnerDlg::OnBnClickedCheck4()
 {
 	GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
-	
 }
