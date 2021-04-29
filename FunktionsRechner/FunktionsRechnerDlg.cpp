@@ -7,7 +7,6 @@
 #include "FunktionsRechner.h"
 #include "FunktionsRechnerDlg.h"
 #include "afxdialogex.h"
-#include "fadiff.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
