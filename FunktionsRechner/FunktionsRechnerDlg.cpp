@@ -198,28 +198,14 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 
 
 void CFunktionsRechnerDlg::OnBnClickedCheck1()
-{
-	
-	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
-
-	bool IsChecked;
-	//CButton* m_ctlCheck1 = (CButton*)GetDlgItem(IDC_CHECK1);
-	//IsChecked = (m_ctlCheck1->GetCheck() == 1) ? true : false;
-	IsChecked = false;
-	
-	if (IsChecked = false)
+{	
+	if (m_cbCheck1.GetCheck() == false)
 	{
-		UpdateData(TRUE);
 		GetDlgItem(IDC_TEIL1)->EnableWindow(false);
-		IsChecked = true;
-		//UpdateData(FALSE);
 	}
 	else
 	{
-		UpdateData(TRUE);
 		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
-		IsChecked = false;
-		UpdateData(FALSE);
 	}
 
 
@@ -228,17 +214,38 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 
 void CFunktionsRechnerDlg::OnBnClickedCheck2()
 {
-	GetDlgItem(IDC_TEIL2)->EnableWindow(TRUE);
+	if (m_cbCheck2.GetCheck() == false)
+	{
+		GetDlgItem(IDC_TEIL2)->EnableWindow(false);
+	}
+	else
+	{
+		GetDlgItem(IDC_TEIL2)->EnableWindow(TRUE);
+	}
 }
 
 
 void CFunktionsRechnerDlg::OnBnClickedCheck3()
 {
-	GetDlgItem(IDC_TEIL3)->EnableWindow(TRUE);
+	if (m_cbCheck3.GetCheck() == false)
+	{
+		GetDlgItem(IDC_TEIL3)->EnableWindow(false);
+	}
+	else
+	{
+		GetDlgItem(IDC_TEIL3)->EnableWindow(TRUE);
+	}
 }
 
 
 void CFunktionsRechnerDlg::OnBnClickedCheck4()
 {
-	GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
+	if (m_cbCheck4.GetCheck() == false)
+	{
+		GetDlgItem(IDC_TEIL4)->EnableWindow(false);
+	}
+	else
+	{
+		GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
+	}
 }
