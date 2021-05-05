@@ -210,7 +210,7 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 	if (IsChecked == false)
 	{
 		UpdateData(TRUE);
-		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+		GetDlgItem(IDC_TEIL1)->EnableWindow(false);
 		IsChecked = true;
 		UpdateData(FALSE);
 	}
