@@ -45,4 +45,8 @@ public:
 	afx_msg void OnBnClickedCheck2();
 	afx_msg void OnBnClickedCheck3();
 	afx_msg void OnBnClickedCheck4();
+	CButton m_cbCheck1;
+	CButton m_cbCheck2;
+	CButton m_cbCheck3;
+	CButton m_cbCheck4;
 };

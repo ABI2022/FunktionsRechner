@@ -70,6 +70,10 @@ void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_TEIL3, m_csTeil3);
 	DDX_Text(pDX, IDC_TEIL4, m_csTeil4);
 	DDX_Text(pDX, IDC_ERG, m_csErg);
+	DDX_Control(pDX, IDC_CHECK1, m_cbCheck1);
+	DDX_Control(pDX, IDC_CHECK2, m_cbCheck2);
+	DDX_Control(pDX, IDC_CHECK3, m_cbCheck3);
+	DDX_Control(pDX, IDC_CHECK4, m_cbCheck4);
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -195,7 +199,7 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 
 void CFunktionsRechnerDlg::OnBnClickedCheck1()
 {
-
+	
 	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
 
 	bool IsChecked;
@@ -208,7 +212,7 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 		UpdateData(TRUE);
 		GetDlgItem(IDC_TEIL1)->EnableWindow(false);
 		IsChecked = true;
-		UpdateData(FALSE);
+		//UpdateData(FALSE);
 	}
 	else
 	{
