@@ -198,22 +198,26 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 
 	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
 
-	//bool IsChecked;
-	////CButton* m_ctlCheck1 = (CButton*)GetDlgItem(IDC_CHECK1);
-	////IsChecked = (m_ctlCheck1->GetCheck() == 1) ? true : false;
-	//IsChecked = false;
-	//UpdateData(TRUE);
-	//if (IsChecked = false)
-	//{
-	//	GetDlgItem(IDC_TEIL1)->EnableWindow(FALSE);
-	//	IsChecked = true;
-	//}
-	//else
-	//{
-	//	GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
-	//	IsChecked = false;
-	//}
-	//UpdateData(FALSE);
+	bool IsChecked;
+	//CButton* m_ctlCheck1 = (CButton*)GetDlgItem(IDC_CHECK1);
+	//IsChecked = (m_ctlCheck1->GetCheck() == 1) ? true : false;
+	IsChecked = false;
+	
+	if (IsChecked = false)
+	{
+		UpdateData(TRUE);
+		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+		IsChecked = true;
+		UpdateData(FALSE);
+	}
+	else
+	{
+		UpdateData(TRUE);
+		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+		IsChecked = false;
+		UpdateData(FALSE);
+	}
+
 
 }
 
