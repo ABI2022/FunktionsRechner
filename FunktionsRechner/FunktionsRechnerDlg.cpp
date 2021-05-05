@@ -207,12 +207,12 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 	//IsChecked = (m_ctlCheck1->GetCheck() == 1) ? true : false;
 	IsChecked = false;
 	
-	if (IsChecked = false)
+	if (IsChecked == false)
 	{
 		UpdateData(TRUE);
 		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
 		IsChecked = true;
-		//UpdateData(FALSE);
+		UpdateData(FALSE);
 	}
 	else
 	{
