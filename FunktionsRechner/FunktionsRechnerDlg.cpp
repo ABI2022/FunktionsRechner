@@ -180,37 +180,74 @@ void CFunktionsRechnerDlg::OnBnClickedOk()
 {
 
 	UpdateData(TRUE);
-	int x1;
-	CString xs1;
-	CString pre1x(_T("NoValue/IncorrectValue"));
-	CString post1x(_T("NoValue/IncorrectValue"));
-	x1 = m_csTeil1.Find('x');
-	xs1.Format(L"%d", x1);
-	pre1x = m_csTeil1.Left(x1);
-	post1x = m_csTeil1.Right(m_csTeil1.GetLength() - x1 -2);
-	//m_csErg.Format(L"%d", x1);
-	int pre1xi = _wtoi(pre1x);
-	int post1xi = _wtoi(post1x);
-	pre1xi = post1xi * pre1xi;
-	post1xi = post1xi - 1;
-	pre1x.Format(L"%d", pre1xi);
-	post1x.Format(L"%d", post1xi);
-	//Teil2
-	int x2;
-	CString xs2;
-	CString pre2x(_T("NoValue/IncorrectValue"));
-	CString post2x(_T("NoValue/IncorrectValue"));
-	x2 = m_csTeil2.Find('x');
-	xs2.Format(L"%d", x2);
-	pre2x = m_csTeil2.Left(x2);
-	post2x = m_csTeil2.Right(m_csTeil2.GetLength() - x2 - 2);
-	int pre2xi = _wtoi(pre2x);
-	int post2xi = _wtoi(post2x);
-	pre2xi = post2xi * pre2xi;
-	post2xi = post2xi - 1;
-	pre2x.Format(L"%d", pre2xi);
-	post2x.Format(L"%d", post2xi);
-	m_csErg = pre1x + "x^" + post1x + " + " + pre2x + "x^" + post2x;
+	if (m_cbCheck1.GetCheck() == true) {
+		int x1;
+		CString xs1;
+		CString pre1x(_T("NoValue/IncorrectValue"));
+		CString post1x(_T("NoValue/IncorrectValue"));
+		x1 = m_csTeil1.Find('x');
+		xs1.Format(L"%d", x1);
+		pre1x = m_csTeil1.Left(x1);
+		post1x = m_csTeil1.Right(m_csTeil1.GetLength() - x1 - 2);
+		int pre1xi = _wtoi(pre1x);
+		int post1xi = _wtoi(post1x);
+		pre1xi = post1xi * pre1xi;
+		post1xi = post1xi - 1;
+		pre1x.Format(L"%d", pre1xi);
+		post1x.Format(L"%d", post1xi);
+		m_csErg = pre1x + "x^" + post1x;
+		if (m_cbCheck2.GetCheck() == true) {
+			int x2;
+			CString xs2;
+			CString pre2x(_T("NoValue/IncorrectValue"));
+			CString post2x(_T("NoValue/IncorrectValue"));
+			x2 = m_csTeil2.Find('x');
+			xs2.Format(L"%d", x2);
+			pre2x = m_csTeil2.Left(x2);
+			post2x = m_csTeil2.Right(m_csTeil2.GetLength() - x2 - 2);
+			int pre2xi = _wtoi(pre2x);
+			int post2xi = _wtoi(post2x);
+			pre2xi = post2xi * pre2xi;
+			post2xi = post2xi - 1;
+			pre2x.Format(L"%d", pre2xi);
+			post2x.Format(L"%d", post2xi);
+			m_csErg = pre1x + "x^" + post1x + " + " + pre2x + "x^" + post2x;
+			if (m_cbCheck3.GetCheck() == true) {
+				int x3;
+				CString xs3;
+				CString pre3x(_T("NoValue/IncorrectValue"));
+				CString post3x(_T("NoValue/IncorrectValue"));
+				x3 = m_csTeil3.Find('x');
+				xs3.Format(L"%d", x3);
+				pre3x = m_csTeil3.Left(x3);
+				post3x = m_csTeil3.Right(m_csTeil3.GetLength() - x3 - 2);
+				int pre3xi = _wtoi(pre3x);
+				int post3xi = _wtoi(post3x);
+				pre3xi = post3xi * pre3xi;
+				post3xi = post3xi - 1;
+				pre3x.Format(L"%d", pre3xi);
+				post3x.Format(L"%d", post3xi);
+				m_csErg = pre1x + "x^" + post1x + " + " + pre2x + "x^" + post2x + " + " + pre3x + "x^" + post3x;
+				if (m_cbCheck4.GetCheck() == true) {
+					int x4;
+					CString xs4;
+					CString pre4x(_T("NoValue/IncorrectValue"));
+					CString post4x(_T("NoValue/IncorrectValue"));
+					x4 = m_csTeil4.Find('x');
+					xs4.Format(L"%d", x4);
+					pre4x = m_csTeil4.Left(x4);
+					post4x = m_csTeil4.Right(m_csTeil4.GetLength() - x4 - 2);
+					int pre4xi = _wtoi(pre4x);
+					int post4xi = _wtoi(post4x);
+					pre4xi = post4xi * pre4xi;
+					post4xi = post4xi - 1;
+					pre4x.Format(L"%d", pre4xi);
+					post4x.Format(L"%d", post4xi);
+					m_csErg = pre1x + "x^" + post1x + " + " + pre2x + "x^" + post2x + " + " + pre3x + "x^" + post3x + " + " + pre4x + "x^" + post4x;
+				}
+			}
+		}
+	}
 	UpdateData(FALSE);
 }
 
