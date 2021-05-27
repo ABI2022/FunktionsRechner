@@ -7,6 +7,7 @@
 #include "FunktionsRechner.h"
 #include "FunktionsRechnerDlg.h"
 #include "afxdialogex.h"
+//#include <boost\numeric\odeint.hpp>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
