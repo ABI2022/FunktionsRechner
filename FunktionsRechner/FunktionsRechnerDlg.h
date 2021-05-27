@@ -34,7 +34,6 @@ protected:
 public:
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnEnChangeEdit1();
-	afx_msg void OnCbnSelchangeCombo1();
 	CString m_csGrad;
 	CString m_csTeil1;
 	CString m_csTeil2;

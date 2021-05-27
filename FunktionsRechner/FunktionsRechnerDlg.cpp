@@ -7,12 +7,11 @@
 #include "FunktionsRechner.h"
 #include "FunktionsRechnerDlg.h"
 #include "afxdialogex.h"
-//#include <boost\numeric\odeint.hpp>
+#include <string>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
 
 // CAboutDlg dialog used for App About
 
@@ -181,7 +180,37 @@ void CFunktionsRechnerDlg::OnBnClickedOk()
 {
 
 	UpdateData(TRUE);
-	m_csErg = m_csTeil1 + m_csTeil2 + m_csTeil3 + m_csTeil4;
+	int x1;
+	CString xs1;
+	CString pre1x(_T("NoValue/IncorrectValue"));
+	CString post1x(_T("NoValue/IncorrectValue"));
+	x1 = m_csTeil1.Find('x');
+	xs1.Format(L"%d", x1);
+	pre1x = m_csTeil1.Left(x1);
+	post1x = m_csTeil1.Right(m_csTeil1.GetLength() - x1 -2);
+	//m_csErg.Format(L"%d", x1);
+	int pre1xi = _wtoi(pre1x);
+	int post1xi = _wtoi(post1x);
+	pre1xi = post1xi * pre1xi;
+	post1xi = post1xi - 1;
+	pre1x.Format(L"%d", pre1xi);
+	post1x.Format(L"%d", post1xi);
+	//Teil2
+	int x2;
+	CString xs2;
+	CString pre2x(_T("NoValue/IncorrectValue"));
+	CString post2x(_T("NoValue/IncorrectValue"));
+	x2 = m_csTeil2.Find('x');
+	xs2.Format(L"%d", x2);
+	pre2x = m_csTeil2.Left(x2);
+	post2x = m_csTeil2.Right(m_csTeil2.GetLength() - x2 - 2);
+	int pre2xi = _wtoi(pre2x);
+	int post2xi = _wtoi(post2x);
+	pre2xi = post2xi * pre2xi;
+	post2xi = post2xi - 1;
+	pre2x.Format(L"%d", pre2xi);
+	post2x.Format(L"%d", post2xi);
+	m_csErg = pre1x + "x^" + post1x + " + " + pre2x + "x^" + post2x;
 	UpdateData(FALSE);
 }
 
