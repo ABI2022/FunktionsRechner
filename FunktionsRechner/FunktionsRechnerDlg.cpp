@@ -58,6 +58,7 @@ CFunktionsRechnerDlg::CFunktionsRechnerDlg(CWnd* pParent /*=nullptr*/)
 	, m_csTeil3(_T(""))
 	, m_csTeil4(_T(""))
 	, m_csErg(_T(""))
+	, m_csERG1(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -74,6 +75,7 @@ void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CHECK2, m_cbCheck2);
 	DDX_Control(pDX, IDC_CHECK3, m_cbCheck3);
 	DDX_Control(pDX, IDC_CHECK4, m_cbCheck4);
+	DDX_Text(pDX, IDC_ERG1, m_csERG1);
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -86,6 +88,7 @@ BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_CHECK2, &CFunktionsRechnerDlg::OnBnClickedCheck2)
 	ON_BN_CLICKED(IDC_CHECK3, &CFunktionsRechnerDlg::OnBnClickedCheck3)
 	ON_BN_CLICKED(IDC_CHECK4, &CFunktionsRechnerDlg::OnBnClickedCheck4)
+	ON_EN_CHANGE(IDC_ERG1, &CFunktionsRechnerDlg::OnEnChangeErg1)
 END_MESSAGE_MAP()
 
 
@@ -315,4 +318,15 @@ void CFunktionsRechnerDlg::OnBnClickedCheck4()
 	{
 		GetDlgItem(IDC_TEIL4)->EnableWindow(TRUE);
 	}
+}
+
+
+void CFunktionsRechnerDlg::OnEnChangeErg1()
+{
+	// TODO:  Falls dies ein RICHEDIT-Steuerelement ist, wird das Kontrollelement
+	// diese Benachrichtigung nicht senden, es sei denn, Sie überschreiben die CDialogEx::OnInitDialog()-
+	// Funktion und rufen CRichEditCtrl().SetEventMask() auf
+	// mit dem ENM_CHANGE-Flag ORed in der Eingabe.
+
+	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
 }

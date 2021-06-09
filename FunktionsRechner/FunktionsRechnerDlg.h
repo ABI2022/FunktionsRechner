@@ -48,4 +48,6 @@ public:
 	CButton m_cbCheck2;
 	CButton m_cbCheck3;
 	CButton m_cbCheck4;
+	afx_msg void OnEnChangeErg1();
+	CString m_csERG1;
 };
