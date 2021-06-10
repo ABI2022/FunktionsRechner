@@ -76,9 +76,6 @@ void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CHECK3, m_cbCheck3);
 	DDX_Control(pDX, IDC_CHECK4, m_cbCheck4);
 	DDX_Text(pDX, IDC_ERG1, m_csERG1);
-	//==========================
-	
-	//==========================
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -101,8 +98,11 @@ BOOL CFunktionsRechnerDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// Add "About..." menu item to system menu.
 
+	// Add "About..." menu item to system menu.
+	m_cbCheck2.EnableWindow(FALSE);
+	m_cbCheck3.EnableWindow(FALSE);
+	m_cbCheck4.EnableWindow(FALSE);
 	// IDM_ABOUTBOX must be in the system command range.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
@@ -167,10 +167,7 @@ void CFunktionsRechnerDlg::OnPaint()
 		// Draw the icon
 		dc.DrawIcon(x, y, m_hIcon);
 
-		//Das gehört hier definitiv nicht heroin (aber es funktioniert) xD
-		m_cbCheck2.EnableWindow(FALSE);
-		m_cbCheck3.EnableWindow(FALSE);
-		m_cbCheck4.EnableWindow(FALSE);
+		
 	}
 	else
 	{
