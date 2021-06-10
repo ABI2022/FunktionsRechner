@@ -76,6 +76,9 @@ void CFunktionsRechnerDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CHECK3, m_cbCheck3);
 	DDX_Control(pDX, IDC_CHECK4, m_cbCheck4);
 	DDX_Text(pDX, IDC_ERG1, m_csERG1);
+	//==========================
+	
+	//==========================
 }
 
 BEGIN_MESSAGE_MAP(CFunktionsRechnerDlg, CDialogEx)
@@ -163,6 +166,11 @@ void CFunktionsRechnerDlg::OnPaint()
 
 		// Draw the icon
 		dc.DrawIcon(x, y, m_hIcon);
+
+		//Das gehört hier definitiv nicht herein (aber es funktioniert) xD
+		m_cbCheck2.EnableWindow(FALSE);
+		m_cbCheck3.EnableWindow(FALSE);
+		m_cbCheck4.EnableWindow(FALSE);
 	}
 	else
 	{
@@ -338,13 +346,18 @@ void CFunktionsRechnerDlg::OnEnChangeEdit1()
 
 void CFunktionsRechnerDlg::OnBnClickedCheck1()
 {	
+	
 	if (m_cbCheck1.GetCheck() == false)
 	{
 		GetDlgItem(IDC_TEIL1)->EnableWindow(false);
+		m_cbCheck2.EnableWindow(FALSE);
+		m_cbCheck2.SetCheck(FALSE);
+		GetDlgItem(IDC_TEIL2)->EnableWindow(false);
 	}
 	else
 	{
 		GetDlgItem(IDC_TEIL1)->EnableWindow(TRUE);
+		m_cbCheck2.EnableWindow(TRUE);
 	}
 
 
@@ -353,26 +366,38 @@ void CFunktionsRechnerDlg::OnBnClickedCheck1()
 
 void CFunktionsRechnerDlg::OnBnClickedCheck2()
 {
+	
 	if (m_cbCheck2.GetCheck() == false)
 	{
+		m_cbCheck3.EnableWindow(FALSE);
+		m_cbCheck3.SetCheck(FALSE);
 		GetDlgItem(IDC_TEIL2)->EnableWindow(false);
+		GetDlgItem(IDC_TEIL3)->EnableWindow(false);
+		
 	}
 	else
 	{
 		GetDlgItem(IDC_TEIL2)->EnableWindow(TRUE);
+		m_cbCheck3.EnableWindow(TRUE);
 	}
 }
 
 
 void CFunktionsRechnerDlg::OnBnClickedCheck3()
 {
+	
 	if (m_cbCheck3.GetCheck() == false)
 	{
+		m_cbCheck4.SetCheck(FALSE);
+		m_cbCheck4.EnableWindow(FALSE);
 		GetDlgItem(IDC_TEIL3)->EnableWindow(false);
+		GetDlgItem(IDC_TEIL4)->EnableWindow(FALSE);
+		
 	}
 	else
 	{
 		GetDlgItem(IDC_TEIL3)->EnableWindow(TRUE);
+		m_cbCheck4.EnableWindow(TRUE);
 	}
 }
 
@@ -381,7 +406,7 @@ void CFunktionsRechnerDlg::OnBnClickedCheck4()
 {
 	if (m_cbCheck4.GetCheck() == false)
 	{
-		GetDlgItem(IDC_TEIL4)->EnableWindow(false);
+		GetDlgItem(IDC_TEIL4)->EnableWindow(FALSE);
 	}
 	else
 	{
