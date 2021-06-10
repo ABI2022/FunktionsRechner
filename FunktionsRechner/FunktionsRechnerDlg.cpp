@@ -167,7 +167,7 @@ void CFunktionsRechnerDlg::OnPaint()
 		// Draw the icon
 		dc.DrawIcon(x, y, m_hIcon);
 
-		//Das gehört hier definitiv nicht herein (aber es funktioniert) xD
+		//Das gehört hier definitiv nicht heroin (aber es funktioniert) xD
 		m_cbCheck2.EnableWindow(FALSE);
 		m_cbCheck3.EnableWindow(FALSE);
 		m_cbCheck4.EnableWindow(FALSE);
